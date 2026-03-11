@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: vpromq01 #match app.props/config file 
+spec:
+  selector:
+    app: vprormq
+  ports:
+    - protocol: TCP
+      port: 5672 #frontend port match with config file
+      targetPort: vprormq-port #backend port match with pod info file
+  type: ClusterIP 
