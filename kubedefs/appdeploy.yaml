@@ -27,6 +27,6 @@ spec:
       - name: init-mydb
         image: busybox:1.28
         command: ['sh', '-c', "until nslookup vprocache01.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local; do echo waiting for mydb; sleep 2; done"]
-      - name: init-mydb
+      - name: init-mq
         image: busybox:1.28
         command: ['sh', '-c', "until nslookup vpromq01.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local; do echo waiting for mydb; sleep 2; done"]        
